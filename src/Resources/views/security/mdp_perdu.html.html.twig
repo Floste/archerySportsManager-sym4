@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Mot de passe perdu</h1>
+    {% if emailSent %}
+        <div class="well">
+            <p>Un mail a été envoyé à votre adresse.</p>
+            <a href="{{ path('homepage') }}">Retour à l'accueil</a>
+        </div>
+    {% else %}
+        {{ form_start(form, { 'attr': { 'action': path('security_mdp_perdu') } } ) }}
+        {{ form_end(form) }}
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% if passwordReseted %}
+
+        <p>Votre mot de passe a été modifé</p>
+
+        <a href="{{ path('security_login') }}">Se connecter</a>
+
+
+    {% else %}
+
+        {% if tokenFound %}
+            {{ form_start(form, { 'attr': { 'action': path('security_mdp_reset', {'token': token}) } } ) }}
+            {{ form_end(form) }}
+        {% else %}
+            <p>Demande invalide</p>
+        {% endif %}
+
+    {% endif %}
+{% endblock %}

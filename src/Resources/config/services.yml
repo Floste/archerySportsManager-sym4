@@ -1,0 +1,14 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+    Sf\ArcherySportsManagerBundle\:
+        resource: '../../*'
+        exclude: '../../{Entity,Repository}'
+
+    Sf\ArcherySportsManagerBundle\Service\TransactionMailManager:
+        arguments:
+            $mailer: '@swiftmailer.mailer.default'
+            $mailer_sender: 'toto@local'
+

@@ -1,0 +1,23 @@
+home:
+    path:     /
+    defaults: { _controller: SfArcherySportsManagerBundle:Default:index }
+
+security_logout:
+    path:     /logout
+    defaults: { _controller: SfArcherySportsManagerBundle:Security:logout }
+
+security_login:
+    path:     /login
+    defaults: { _controller: SfArcherySportsManagerBundle:Security:login }
+
+security_mdp_perdu:
+    path:     /mdp-perdu
+    defaults: { _controller: SfArcherySportsManagerBundle:Security:lostPassword }
+
+security_mdp_reset:
+    path:     /mdp-reset/{token}
+    defaults: { _controller: SfArcherySportsManagerBundle:Security:passwordReset }
+
+backoffice_homepage:
+    path:     /dashboard
+    defaults: { _controller: SfArcherySportsManagerBundle:Default:index }
